@@ -16,7 +16,7 @@ public class ETFCalculator implements Calculator {
         if (basicSalary != null && basicSalary > 0) {
             return (basicSalary / 100) * 3;
         } else {
-            throw new IllegalArgumentException("Given amount is invalid");
+            throw new IllegalArgumentException("Given amount is invalid for ETF Calculation");
         }
     }
 }

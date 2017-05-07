@@ -18,16 +18,24 @@ public class OTCalculator implements Calculator {
     }
 
     public double calculate() {
-        if ((basicHourlyRate != null && basicHourlyRate >= 0) && (hoursWorked != null && hoursWorked >= 0)) {
+        if (basicHourlyRate != null && otType != null && hoursWorked != null && hoursWorked >= 0 && basicHourlyRate >= 0) {
             double totalOTValue = 0.0;
             if (SalaryConstants.OT_TYPE_REGULAR.equalsIgnoreCase(otType)) {
-                totalOTValue = ((basicHourlyRate / 100) * 150) * hoursWorked;
+                if (hoursWorked <= 4) {
+                    totalOTValue = ((basicHourlyRate / 100) * 150) * hoursWorked;
+                } else {
+                    throw new IllegalArgumentException("Invalid Time for working hours");
+                }
             } else if (SalaryConstants.OT_TYPE_DOUBLE.equalsIgnoreCase(otType)) {
-                totalOTValue = ((basicHourlyRate / 100) * 200) * hoursWorked;
+                if (hoursWorked <= 8) {
+                    totalOTValue = ((basicHourlyRate / 100) * 200) * hoursWorked;
+                } else {
+                    throw new IllegalArgumentException("Invalid Time for working hours");
+                }
             }
             return totalOTValue;
         } else {
-            throw new IllegalArgumentException("Given amounts are invalid");
+            throw new IllegalArgumentException("Given values are invalid for OT calculation");
         }
     }
 }
