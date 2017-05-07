@@ -47,20 +47,31 @@ public class OTCalculatorTest {
         OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
         epf.calculate();
     }
-//
-//    @Test(expected = IllegalArgumentException.class)
-//    public void shouldThrowExceptionWhenHoursWorkedNull() {
-//        Double basicHourlyRate = 100000d;
-//        Double hoursWorked = null;
-//        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked);
-//        epf.calculate();
-//    }
-//
-//    @Test(expected = IllegalArgumentException.class)
-//    public void shouldThrowExceptionWhenHoursWorkedNegative() {
-//        Double basicHourlyRate = 100000d;
-//        Double hoursWorked = -8d;
-//        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked);
-//        epf.calculate();
-//    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenHoursWorkedNull() {
+        Double basicHourlyRate = 100000d;
+        Double hoursWorked = null;
+        String otType = SalaryConstants.OT_TYPE_REGULAR;
+        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        epf.calculate();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenHoursWorkedNegative() {
+        Double basicHourlyRate = 100000d;
+        Double hoursWorked = -8d;
+        String otType = SalaryConstants.OT_TYPE_REGULAR;
+        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        epf.calculate();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenOTTypeNotGiven() {
+        Double basicHourlyRate = 100000d;
+        Double hoursWorked = -8d;
+        String otType = null;
+        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        epf.calculate();
+    }
 }

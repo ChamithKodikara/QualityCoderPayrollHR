@@ -18,7 +18,7 @@ public class OTCalculator implements Calculator {
     }
 
     public double calculate() {
-        if (basicHourlyRate != null && basicHourlyRate >= 0) {
+        if ((basicHourlyRate != null && basicHourlyRate >= 0) && (hoursWorked != null && hoursWorked >= 0)) {
             double totalOTValue = 0.0;
             if (SalaryConstants.OT_TYPE_REGULAR.equalsIgnoreCase(otType)) {
                 totalOTValue = ((basicHourlyRate / 100) * 150) * hoursWorked;
