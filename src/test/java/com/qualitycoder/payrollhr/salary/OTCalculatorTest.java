@@ -31,12 +31,30 @@ public class OTCalculatorTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenHourlyRateMoreThan_4_RegularOT() {
+        Double basicHourlyRate = -100d;
+        Double hoursWorked = 5d;
+        String otType = SalaryConstants.OT_TYPE_REGULAR;
+        OTCalculator ot = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        ot.calculate();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenHourlyRateMoreThan_8_DoubleOT() {
+        Double basicHourlyRate = -100d;
+        Double hoursWorked = 9d;
+        String otType = SalaryConstants.OT_TYPE_DOUBLE;
+        OTCalculator ot = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        ot.calculate();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void shouldThrowExceptionWhenHourlyRateNegative() {
         Double basicHourlyRate = -100d;
         Double hoursWorked = 4d;
         String otType = SalaryConstants.OT_TYPE_REGULAR;
-        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
-        epf.calculate();
+        OTCalculator ot = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        ot.calculate();
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -44,8 +62,8 @@ public class OTCalculatorTest {
         Double basicHourlyRate = null;
         Double hoursWorked = 4d;
         String otType = SalaryConstants.OT_TYPE_REGULAR;
-        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
-        epf.calculate();
+        OTCalculator ot = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        ot.calculate();
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -53,8 +71,8 @@ public class OTCalculatorTest {
         Double basicHourlyRate = 100000d;
         Double hoursWorked = null;
         String otType = SalaryConstants.OT_TYPE_REGULAR;
-        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
-        epf.calculate();
+        OTCalculator ot = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        ot.calculate();
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -62,8 +80,8 @@ public class OTCalculatorTest {
         Double basicHourlyRate = 100000d;
         Double hoursWorked = -8d;
         String otType = SalaryConstants.OT_TYPE_REGULAR;
-        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
-        epf.calculate();
+        OTCalculator ot = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        ot.calculate();
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -71,7 +89,7 @@ public class OTCalculatorTest {
         Double basicHourlyRate = 100000d;
         Double hoursWorked = -8d;
         String otType = null;
-        OTCalculator epf = new OTCalculator(basicHourlyRate, hoursWorked, otType);
-        epf.calculate();
+        OTCalculator ot = new OTCalculator(basicHourlyRate, hoursWorked, otType);
+        ot.calculate();
     }
 }
