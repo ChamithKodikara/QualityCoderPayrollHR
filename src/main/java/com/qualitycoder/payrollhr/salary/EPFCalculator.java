@@ -20,7 +20,7 @@ public class EPFCalculator implements Calculator {
         if ((epfContribution != null && epfContribution > 0) && (basicSalary != null && basicSalary > 0)) {
             return (basicSalary / 100) * epfContribution + (basicSalary / 100) * 12;
         } else {
-            throw new IllegalArgumentException("Given amounts are invalid");
+            throw new IllegalArgumentException("Given amounts are invalid for EPF Calculation");
         }
     }
 }
