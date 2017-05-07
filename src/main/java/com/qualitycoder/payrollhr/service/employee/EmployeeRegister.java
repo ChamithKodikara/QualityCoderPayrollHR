@@ -12,4 +12,6 @@ public interface EmployeeRegister {
 			String dob, String gender, String basicSal, String epfContribution,
 			String phoneNumber, String address);
 
+	public Employee getEmployee(String empId);
+
 }
