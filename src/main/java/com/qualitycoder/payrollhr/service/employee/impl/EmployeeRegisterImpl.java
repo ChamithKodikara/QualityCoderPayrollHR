@@ -128,6 +128,7 @@ public class EmployeeRegisterImpl implements EmployeeRegister {
 					 }
 					 employee.setPhoneNo(lineArr[7]);
 					 employee.setAddress(lineArr[8]);
+					 break;
 				 }
 			 }
 			 reader.close();
