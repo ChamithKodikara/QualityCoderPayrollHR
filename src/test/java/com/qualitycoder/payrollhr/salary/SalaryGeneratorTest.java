@@ -20,7 +20,7 @@ public class SalaryGeneratorTest {
         Employee employee = register.getEmployee("E00001");
         OTDetail otDetail = new OTDetail("E00001", 100.00, 3.0, 5.0);
         SalaryGenerator salaryGenerator = new SalaryGeneratorImpl();
-        double salary = salaryGenerator.generate(employee, otDetail);
+        double salary = salaryGenerator.generate(employee.getBasicSalary(), employee.getEpfContribution(), otDetail);
         assertThat(salary, is(91924.9));
     }
 }
