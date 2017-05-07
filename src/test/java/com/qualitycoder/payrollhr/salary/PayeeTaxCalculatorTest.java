@@ -1,7 +1,6 @@
-package com.qualitycoder.payrollhr;
+package com.qualitycoder.payrollhr.salary;
 
 import com.qualitycoder.payrollhr.constants.SalaryConstants;
-import com.qualitycoder.payrollhr.salary.PayeeTaxCalculator;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

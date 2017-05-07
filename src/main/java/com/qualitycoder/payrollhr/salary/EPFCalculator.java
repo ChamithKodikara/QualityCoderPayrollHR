@@ -8,17 +8,19 @@ import com.qualitycoder.payrollhr.Calculator;
 public class EPFCalculator implements Calculator {
 
     private Double basicSalary;
+    private Double epfContribution;
 
-    public EPFCalculator(Double basicSalary) {
+    public EPFCalculator(Double basicSalary, Double epfContribution) {
         this.basicSalary = basicSalary;
+        this.epfContribution = epfContribution;
     }
 
     @Override
     public double calculate() {
-        if (basicSalary != null && basicSalary > 0) {
-            return (basicSalary / 100) * 8 + (basicSalary / 100) * 12;
+        if ((epfContribution != null && epfContribution > 0) && (basicSalary != null && basicSalary > 0)) {
+            return (basicSalary / 100) * epfContribution + (basicSalary / 100) * 12;
         } else {
-            throw new IllegalArgumentException("Given amount is invalid");
+            throw new IllegalArgumentException("Given amounts are invalid");
         }
     }
 }
