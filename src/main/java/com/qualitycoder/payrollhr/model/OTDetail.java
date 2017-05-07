@@ -9,6 +9,16 @@ public class OTDetail {
     private Double regularOTHours;
     private Double doubleOTHours;
 
+    public OTDetail() {
+    }
+
+    public OTDetail(String empID, Double basicHourlyRate, Double regularOTHours, Double doubleOTHours) {
+        this.empID = empID;
+        this.basicHourlyRate = basicHourlyRate;
+        this.regularOTHours = regularOTHours;
+        this.doubleOTHours = doubleOTHours;
+    }
+
     public String getEmpID() {
         return empID;
     }
