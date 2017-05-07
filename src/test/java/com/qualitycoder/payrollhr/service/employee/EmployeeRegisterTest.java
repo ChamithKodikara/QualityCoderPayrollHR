@@ -29,7 +29,8 @@ public class EmployeeRegisterTest {
 	/**
 	 * need to change the employee details before run the test case
 	 * otherwise it'll add duplicate users
-	 
+	 */
+	/*
 	@Test
 	public void should_register_employee_When_given_all_details(){
 		String empId = "E01001";
@@ -48,8 +49,8 @@ public class EmployeeRegisterTest {
 		Boolean isAdded = employeeRegister.addEmployee(empId, name, designation, dob, gender, basicSal, epfContribution, phoneNumber, address);
 		
 		assertThat(isAdded, is(true));
-	}*/
-	
+	}
+	*/
 	@Test
 	public void should_get_employee_when_given_id(){
 		String empId = "E00001";
