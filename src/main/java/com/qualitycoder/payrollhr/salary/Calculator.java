@@ -1,4 +1,4 @@
-package com.qualitycoder.payrollhr;
+package com.qualitycoder.payrollhr.salary;
 
 /**
  * @author Chamith

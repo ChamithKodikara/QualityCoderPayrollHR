@@ -1,7 +1,6 @@
 package com.qualitycoder.payrollhr.salary;
 
 import com.qualitycoder.payrollhr.App;
-import com.qualitycoder.payrollhr.Calculator;
 import com.qualitycoder.payrollhr.constants.SalaryConstants;
 import com.qualitycoder.payrollhr.model.OTDetail;
 import org.apache.log4j.Logger;

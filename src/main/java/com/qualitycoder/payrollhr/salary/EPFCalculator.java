@@ -1,6 +1,5 @@
 package com.qualitycoder.payrollhr.salary;
 
-import com.qualitycoder.payrollhr.Calculator;
 import com.qualitycoder.payrollhr.constants.SalaryConstants;
 
 /**
