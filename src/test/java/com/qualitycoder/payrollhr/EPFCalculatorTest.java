@@ -12,23 +12,23 @@ import static org.hamcrest.core.Is.is;
 public class EPFCalculatorTest {
     @Test
     public void shouldCalculateEPFWhenBasicSalaryGiven() {
-        Double basicSalary = 10000d;
-        EPFCalculator cal = new EPFCalculator(basicSalary);
-        double epf = cal.calculate();
-        assertThat(epf, is(2000.0));
+        Double basicSalary = 100000d;
+        EPFCalculator epf = new EPFCalculator(basicSalary);
+        double epfValue = epf.calculate();
+        assertThat(epfValue, is(20000.0));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowExceptionWhenBasicSalaryNegative() {
-        Double basicSalary = -10000d;
-        EPFCalculator cal = new EPFCalculator(basicSalary);
-        cal.calculate();
+        Double basicSalary = -100000d;
+        EPFCalculator epf = new EPFCalculator(basicSalary);
+        epf.calculate();
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowExceptionWhenBasicSalaryNull() {
         Double basicSalary = null;
-        EPFCalculator cal = new EPFCalculator(basicSalary);
-        cal.calculate();
+        EPFCalculator epf = new EPFCalculator(basicSalary);
+        epf.calculate();
     }
 }

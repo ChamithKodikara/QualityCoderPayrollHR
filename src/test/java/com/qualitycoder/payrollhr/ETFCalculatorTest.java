@@ -11,24 +11,24 @@ import static org.hamcrest.core.Is.is;
  */
 public class ETFCalculatorTest {
     @Test
-    public void shouldCalculateEPFWhenBasicSalaryGiven() {
-        Double basicSalary = 10000d;
-        ETFCalculator cal = new ETFCalculator(basicSalary);
-        double epf = cal.calculate();
-        assertThat(epf, is(300.0));
+    public void shouldCalculateETFWhenBasicSalaryGiven() {
+        Double basicSalary = 100000d;
+        ETFCalculator etf = new ETFCalculator(basicSalary);
+        double etfValue = etf.calculate();
+        assertThat(etfValue, is(3000.0));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowExceptionWhenBasicSalaryNegative() {
-        Double basicSalary = -10000d;
-        ETFCalculator cal = new ETFCalculator(basicSalary);
-        cal.calculate();
+        Double basicSalary = -100000d;
+        ETFCalculator etf = new ETFCalculator(basicSalary);
+        etf.calculate();
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowExceptionWhenBasicSalaryNull() {
         Double basicSalary = null;
-        ETFCalculator cal = new ETFCalculator(basicSalary);
-        cal.calculate();
+        ETFCalculator etf = new ETFCalculator(basicSalary);
+        etf.calculate();
     }
 }
