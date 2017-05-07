@@ -21,7 +21,7 @@ public class SalaryGeneratorTest {
         OTDetail otDetail = new OTDetail("E00001", 100.00, 3.0, 5.0);
         SalaryGenerator salaryGenerator = new SalaryGeneratorImpl();
         double salary = salaryGenerator.generate(employee, otDetail);
-        assertThat(salary, is(79461.58));
+        assertThat(salary, is(91924.9));
     }
 }
 
