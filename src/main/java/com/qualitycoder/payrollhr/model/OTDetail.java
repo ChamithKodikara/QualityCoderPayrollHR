@@ -5,6 +5,7 @@ package com.qualitycoder.payrollhr.model;
  */
 public class OTDetail {
     private String empID;
+    private Double basicHourlyRate;
     private Double regularOTHours;
     private Double doubleOTHours;
 
@@ -30,5 +31,13 @@ public class OTDetail {
 
     public void setDoubleOTHours(Double doubleOTHours) {
         this.doubleOTHours = doubleOTHours;
+    }
+
+    public Double getBasicHourlyRate() {
+        return basicHourlyRate;
+    }
+
+    public void setBasicHourlyRate(Double basicHourlyRate) {
+        this.basicHourlyRate = basicHourlyRate;
     }
 }

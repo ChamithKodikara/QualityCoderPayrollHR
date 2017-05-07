@@ -23,10 +23,6 @@ public class PayeeTaxCalculator implements Calculator {
                 return SalaryConstants.PAYEE_TAX_SALARY_75_100;
             } else if (basicSalary < 75000 && basicSalary >= 50000) {
                 return SalaryConstants.PAYEE_TAX_SALARY_50_75;
-            } else if (basicSalary < 75000 && basicSalary >= 50000) {
-                return SalaryConstants.PAYEE_TAX_SALARY_50_75;
-            } else if (basicSalary < 75000 && basicSalary >= 50000) {
-                return SalaryConstants.PAYEE_TAX_SALARY_50_75;
             } else if (basicSalary < 50000 && basicSalary >= 30000) {
                 return SalaryConstants.PAYEE_TAX_SALARY_30_50;
             } else {
